@@ -29,10 +29,6 @@ module ProfileTypeChecker
     method_name.to_s.start_with?(PREFIX) && method_name.to_s.end_with?(SUFFIX) || super
   end
 
-  def user_profile_types
-    self.profiles.map { |profile| profile.class.to_s.delete_suffix(PROFILE) }
-  end
-
   private
 
   def check_profile_types(method_name)
